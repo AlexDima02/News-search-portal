@@ -1,0 +1,53 @@
+<p>Filter:</p>
+<div class="flex flex-col">
+
+    <div class="flex-col flex">
+        <label for="">From</label>
+        <input #from class="border border-black" type="date" name="" id="" (change)="getDateFrom(from.value)">
+    </div>
+    <div class="flex-col flex">
+        <label for="">To</label>
+        <input #to class="border border-black" type="date" name="" id="" (change)="getDateTo(to.value)">
+    </div>
+    <div class="flex-col flex">
+        <label for="">Languages:</label>
+        <select #language class="border border-black" (change)="getLanguage(language.value)">
+            <option value=""></option>
+            <option value="ar">Arabic</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="it">Italian</option>
+            <option value="ru">Russian</option>
+        </select>
+    </div>
+    <div class="flex-col flex">
+        <label for="">Country:</label>
+        <select #country class="border border-black" (change)="getCountry(country.value)">
+            <option value=""></option>
+            <option value="eg">Egypt</option>
+            <option value="fr">France</option>
+            <option value="pl">Poland</option>
+            <option value="gb">Great Britain</option>
+            <option value="bg">Bulgary</option>
+            <option value="us">United States</option>
+            <option value="ro">Romania</option>
+            <option value="ru">Russia</option>
+        </select>
+    </div>
+    <div class="flex-col flex">
+        <label for="">Category:</label>
+        <select #category class="border border-black" (change)="getCategory(category.value)">
+            <option value=""></option>
+            <option value="business">Business</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="general">General</option>
+            <option value="health">Health</option>
+            <option value="science">Science</option>
+            <option value="sports">Sports</option>
+            <option value="technology">Technology</option>
+        </select>
+    </div>
+    <div><button (click)="onSubmit()">Filter</button></div>
+</div>

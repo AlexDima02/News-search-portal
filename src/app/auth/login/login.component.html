@@ -1,0 +1,53 @@
+<div class="max-w-7xl m-auto flex flex-col h-screen place-content-center">
+    <div class="border border-black">
+        <form [formGroup]="cardForm" class="flex flex-col w-[80%] m-auto py-10" (ngSubmit)="onSubmit()">
+            <div class="mb-10">
+                <h1 class="text-3xl font-bold">Login</h1>
+                <p class="font-bold text-gray-400 pt-2">Please fill your information below</p>
+            </div>
+            <div class="flex flex-col">
+                <input formControlName="email" class="border-b border-gray-300 outline-none focus:border-black text-2xl py-2" placeholder="Email" type="email">
+                
+                <ng-container *ngIf="cardForm.controls.email.touched && cardForm.controls.email.errors">
+                    <div *ngIf="cardForm.controls.email.errors['email']" [ngClass]="{'text-red-300': cardForm.controls.email.errors['email']}">
+                        Invalid email!
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="cardForm.controls.email.touched && cardForm.controls.email.errors">
+                    <div *ngIf="cardForm.controls.email.errors['required']" [ngClass]="{'text-red-300': cardForm.controls.email.errors['required']}">
+                        Please provide an email!
+                    </div>
+                </ng-container>
+
+            </div>
+            <div class="flex flex-col py-8">
+                <input formControlName="password" class="border-b border-gray-300 outline-none focus:border-black text-2xl py-2" placeholder="Password" type="password">
+                
+                <ng-container *ngIf="cardForm.controls.password.touched && cardForm.controls.password.errors">
+                    <div *ngIf="cardForm.controls.password.errors['required']" [ngClass]="{'text-red-300': cardForm.controls.password.errors['required']}">
+                        Please provide a password!
+                    </div>
+                </ng-container>
+
+            </div>
+            <div class="flex place-content-center pt-8">
+                <button class="py-3 bg-yellow-900 w-full text-white font-bold" type="submit">SUBMIT</button>
+            </div>
+            <ng-container *ngIf="notCompleted">
+                <div *ngIf="notCompleted" [ngClass]="{'text-red-400 py-5': notCompleted}">
+                     Please fill out the form!
+                </div>
+            </ng-container>
+            <ng-container *ngIf="notValidEmail">
+                <div *ngIf="notValidEmail" [ngClass]="{'text-red-400 py-5': notValidEmail}">
+                     Email or password invalid!
+                </div>
+            </ng-container>
+            <div class="flex pt-4">
+                <div class="pr-5"><a routerLink="/login">Forgot my password!</a></div>
+                <div class=""><a routerLink="/signup">Sign up</a></div>
+            </div>
+        </form>
+    </div>
+</div>

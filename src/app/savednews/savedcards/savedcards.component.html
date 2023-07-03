@@ -1,0 +1,17 @@
+<ng-container *ngFor="let item of savedData; let i = index">
+    <div class="w-60 h-full">
+        <div class="w-full h-full object-contain overflow-hidden">
+            <img class="w-full h-full" src="" alt="">
+        </div>
+        <div class="px-3 py-3">
+            <h1 class="font-bold">{{item.publishedAt}}</h1>
+            <p class="text-gray-400">Some description..</p>
+        </div>
+        <div class="text-orange-400 px-3 pb-3">
+            <a href="">Keep reading ></a>
+        </div>
+        <div (click)="deleteCard(item.id)">
+            Delete card
+        </div>
+    </div>
+</ng-container>

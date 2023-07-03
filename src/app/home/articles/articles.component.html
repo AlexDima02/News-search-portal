@@ -1,0 +1,7 @@
+<p>articles works!</p>
+<div [ngClass]="{active: itemStatus}" class="succes">
+    Added to your favourites!
+</div>
+<app-filter [rawData]="data" (processedData)="getData($event)"></app-filter>
+<app-sort [rawData]="originalData" (processedData)="getData($event)"></app-sort>
+<app-card [processedData]="originalData" [bringData]="addData" [removeData]="deleteData"></app-card>

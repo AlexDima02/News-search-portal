@@ -1,0 +1,5 @@
+<div>
+    <input #term type="text" (input)="fetch(term.value)">
+    <button (click)="onSubmit()">Submit</button>
+</div>
+<app-articles [data]="data"></app-articles>
